@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'EBPay.function.php';
 
 $TradeInfo = file_get_contents("php://input");
@@ -14,10 +14,13 @@ if ($json->Status == "SUCCESS"){
   // Get MerchantTradeNo example
   $MerchantTradeNo = $json->Result->MerchantOrderNo;
 
-  /*
-   *  See more: https://www.newebpay.com/website/Page/download_file?name=%E8%97%8D%E6%96%B0%E9%87%91%E6%B5%81Newebpay_MPG%E4%B8%B2%E6%8E%A5%E6%89%8B%E5%86%8A_MPG_1.1.0.pdf
-   *  Download this api pdf file page 46.
-   *  
+  if ($json->Result->TradeStatus == 1) { // 付款成功
+
+  }
+
+  /**
+   *  See more: https://www.newebpay.com/website/Page/content/download_api -> 金流API -> 線上交易─幕前支付
+   *  Download this api document and page 51.
    */
 
 }else{

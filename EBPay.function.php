@@ -2,6 +2,7 @@
 $HashKey    = '';
 $HashIV     = '';
 $MerchantID = '';
+$Version    = '2.0';
 
 /* EBPay function */
 function create_mpg_aes_encrypt($parameter = "", $key = "", $iv = ""){
