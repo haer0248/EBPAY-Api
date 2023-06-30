@@ -9,14 +9,10 @@ $get_aes = str_replace("TradeInfo=","", $arr[3]);
 $data = create_aes_decrypt($get_aes, $HashKey, $HashIV);
 $json = json_decode($data);
 
-if ($json->Status == "SUCCESS"){
+if ($json->Status == "SUCCESS"){ // 付款成功
 
   // Get MerchantTradeNo example
   $MerchantTradeNo = $json->Result->MerchantOrderNo;
-
-  if ($json->Result->TradeStatus == 1) { // 付款成功
-
-  }
 
   /**
    *  See more: https://www.newebpay.com/website/Page/content/download_api -> 金流API -> 線上交易─幕前支付
